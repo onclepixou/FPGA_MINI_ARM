@@ -1,0 +1,8 @@
+small ARM processor in VHDL in the style of "Digital design and computer architecture" by Harris and Harris (2016).
+
+
+Capabilities : 
+
+    Arithmetic instructions : ADD, SUB, AND, ORR
+    Memory Instructions     : LDR, STR
+    Branches 
