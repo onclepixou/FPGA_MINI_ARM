@@ -40,12 +40,12 @@ BEGIN
                     -- write affectation
                     IF (we = '1') THEN
                     
-                        mem(TO_INTEGER(UNSIGNED(a))) <= wd;
+                        mem(TO_INTEGER(UNSIGNED(a(N - 1 DOWNTO 2)))) <= wd;
                         
                     END IF;
                     
                     -- read affectation
-                    rd <= mem(TO_INTEGER(UNSIGNED(a)));
+                    rd <= mem(TO_INTEGER(UNSIGNED(a(N - 1 DOWNTO 2))));
                     
                 END IF;
                 
