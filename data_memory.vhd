@@ -26,20 +26,21 @@ BEGIN
 
         BEGIN
 
-           -- asynchronous rest
-            IF (rst = '1') THEN
+           -- asynchronous reset
+            
+                   
+            -- rising edge
+            IF (clk'EVENT AND clk = '1') THEN
+                IF (rst = '1') THEN
                 
-                    FOR i IN 0 TO N - 1 LOOP
+                    FOR i IN 0 TO 2*N - 1 LOOP
             
                         mem(i) <= (OTHERS => '0');
                 
                     END LOOP;
-                   
-            -- rising edge
-            ELSIF (clk'EVENT AND clk = '1') THEN
                     
                 -- valid address test
-                IF (a = wrong_address OR SIGNED(a) > "1000000") THEN
+                ELSIF (a = wrong_address OR SIGNED(a) > "1000000") THEN
                     
                     rd <= (OTHERS => 'U');
                     
