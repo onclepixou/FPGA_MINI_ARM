@@ -67,7 +67,6 @@ BEGIN
                     END IF;
                     
                 END IF;
-                WAIT ON clk, a;
             END LOOP;
             
         END PROCESS;
