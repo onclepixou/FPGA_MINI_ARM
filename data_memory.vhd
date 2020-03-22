@@ -16,7 +16,7 @@ END;
 ARCHITECTURE behave OF data_memory IS
 
 CONSTANT wrong_address: STD_LOGIC_VECTOR(N - 1 DOWNTO 0) := (OTHERS => 'U');
-TYPE ramtype IS ARRAY (2**N - 1 DOWNTO 0) OF STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+TYPE ramtype IS ARRAY (2*N - 1 DOWNTO 0) OF STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
 SIGNAL mem: ramtype;
 
 BEGIN
@@ -48,7 +48,7 @@ BEGIN
                 ELSIF (clk'EVENT AND clk = '1') THEN
                     
                     -- valid address test
-                    IF a = wrong_address THEN
+                    IF (a = wrong_address OR SIGNED(a) > "1000000") THEN
                     
                         rd <= (OTHERS => 'U');
                     
@@ -67,7 +67,7 @@ BEGIN
                     END IF;
                     
                 END IF;
-                
+                WAIT ON clk, a;
             END LOOP;
             
         END PROCESS;
