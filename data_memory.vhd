@@ -25,49 +25,39 @@ BEGIN
     PROCESS(clk, we, a, wd)
 
         BEGIN
-        
-            -- initialisation memory set to 0
-            FOR i IN 0 TO N - 1 LOOP
-            
-                mem(i) <= (OTHERS => '0');
-                
-            END LOOP;
-            
-            -- read and write loop
-            LOOP
-                -- asynchronous rest
-                IF (rst = '1') THEN
-                
-                        FOR i IN 0 TO N - 1 LOOP
-            
-                            mem(i) <= (OTHERS => '0');
-                
-                        END LOOP;
-                   
-                -- rising edge
-                ELSIF (clk'EVENT AND clk = '1') THEN
-                    
-                    -- valid address test
-                    IF (a = wrong_address OR SIGNED(a) > "1000000") THEN
-                    
-                        rd <= (OTHERS => 'U');
-                    
-                    ELSE
-                    
-                        -- write affectation
-                        IF (we = '1') THEN
-                    
-                            mem(TO_INTEGER(UNSIGNED(a(N - 1 DOWNTO 2)))) <= wd;
-                        
-                        END IF;
-                    
-                        -- read affectation
-                        rd <= mem(TO_INTEGER(UNSIGNED(a(N - 1 DOWNTO 2))));
 
+           -- asynchronous rest
+            IF (rst = '1') THEN
+                
+                    FOR i IN 0 TO N - 1 LOOP
+            
+                        mem(i) <= (OTHERS => '0');
+                
+                    END LOOP;
+                   
+            -- rising edge
+            ELSIF (clk'EVENT AND clk = '1') THEN
+                    
+                -- valid address test
+                IF (a = wrong_address OR SIGNED(a) > "1000000") THEN
+                    
+                    rd <= (OTHERS => 'U');
+                    
+                ELSE
+                    
+                    -- write affectation
+                    IF (we = '1') THEN
+                    
+                        mem(TO_INTEGER(UNSIGNED(a(N - 1 DOWNTO 2)))) <= wd;
+                        
                     END IF;
                     
+                    -- read affectation
+                    rd <= mem(TO_INTEGER(UNSIGNED(a(N - 1 DOWNTO 2))));
+
                 END IF;
-            END LOOP;
+                    
+            END IF;
             
         END PROCESS;
 
