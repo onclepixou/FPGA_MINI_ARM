@@ -40,7 +40,7 @@ BEGIN
                     END LOOP;
                     
                 -- valid address test
-                ELSIF (a = wrong_address OR SIGNED(a) > "1000000") THEN
+                ELSIF (a = wrong_address OR a > "1000000") THEN
                     
                     rd <= (OTHERS => 'U');
                     
