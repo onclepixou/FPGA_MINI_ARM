@@ -39,7 +39,7 @@ ARCHITECTURE arch OF main_decoder IS
         alusrc <= '0' WHEN ( op = "00" AND funct(1) = '0') ELSE
                   '1';
                 
-        immsrc <= "UU" WHEN ( op = "00" AND funct(1) = '0') ELSE
+        immsrc <= "XX" WHEN ( op = "00" AND funct(1) = '0') ELSE
                   "00" WHEN ( op = "00" AND funct(1) = '1') ELSE
                   "01" WHEN ( op = "01") ELSE
                   "10" WHEN ( op = "10");
