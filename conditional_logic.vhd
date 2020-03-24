@@ -16,13 +16,7 @@ ENTITY conditional_logic IS
         memw       : IN  STD_LOGIC;
         pcsrc      : OUT STD_LOGIC;
         regwrite   : OUT STD_LOGIC;
-        memwrite   : OUT STD_LOGIC;
-        memtoreg   : OUT STD_LOGIC;
-        alusrc     : OUT STD_LOGIC;
-        immsrc     : OUT STD_LOGIC;
-        regsrc     : OUT STD_LOGIC;
-        alucontrol : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
-
+        memwrite   : OUT STD_LOGIC
     );
 
 END ENTITY;
