@@ -19,7 +19,7 @@ ENTITY mux_1_bit IS
         
     );
 
-END;
+END ENTITY;
 
 ARCHITECTURE arch OF mux_1_bit IS
 
