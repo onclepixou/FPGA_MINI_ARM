@@ -18,7 +18,7 @@ ENTITY instr_mem IS
         
     );
 
-END;
+END ENTITY;
 
 ARCHITECTURE arch OF instr_mem IS
 
