@@ -2,7 +2,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
-ENTITY regfile IS
+ENTITY reg_file IS
 
     PORT( 
         
@@ -20,7 +20,7 @@ ENTITY regfile IS
 
 END ENTITY;
 
-ARCHITECTURE arch OF regfile IS
+ARCHITECTURE arch OF reg_file IS
 
     TYPE ramtype IS ARRAY (15 downto 0) OF STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL mem: ramtype;
