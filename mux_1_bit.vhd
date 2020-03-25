@@ -13,8 +13,8 @@ ENTITY mux_1_bit IS
     PORT(
 
         sel:      IN   STD_LOGIC;
+        e0:       IN   STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
         e1:       IN   STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-        e2:       IN   STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
         s:        OUT  STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
         
     );
@@ -25,8 +25,8 @@ ARCHITECTURE arch OF mux_1_bit IS
 
     BEGIN
 
-        s <= e1 WHEN sel = '0' ELSE
-             e2 WHEN sel = '1' ;
+        s <= e0 WHEN sel = '0' ELSE
+             e1 WHEN sel = '1' ;
 
 END ARCHITECTURE;
     
