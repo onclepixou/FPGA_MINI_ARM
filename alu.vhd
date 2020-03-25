@@ -11,11 +11,12 @@ ENTITY alu is
 
     );
 
-    PORT ( a          : IN  STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-           b          : IN  STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-           alucontrol : IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
-           result     : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-           aluflags   : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    PORT ( 
+            a          : IN  STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+            b          : IN  STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+            alucontrol : IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
+            result     : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+            aluflags   : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 
 END ENTITY;
