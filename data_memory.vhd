@@ -48,7 +48,7 @@ ARCHITECTURE behave OF data_memory IS
                         END LOOP;
 
                     -- valid address test
-                    ELSIF (a = wrong_address OR a > "1000000") THEN
+                    IF (a = wrong_address OR a > "1000000") THEN
 
                         rd <= (OTHERS => 'U');
 
