@@ -18,7 +18,7 @@ ENTITY regfile IS
 
     );
 
-END;
+END ENTITY;
 
 ARCHITECTURE arch OF regfile IS
 
