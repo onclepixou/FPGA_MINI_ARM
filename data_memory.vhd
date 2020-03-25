@@ -11,7 +11,7 @@ ENTITY data_memory IS
     PORT( clk, we, rst: IN    STD_LOGIC;
           a, wd:        IN    STD_LOGIC_VECTOR(N - 1 downto 0);
           rd:           OUT   STD_LOGIC_VECTOR(N - 1 downto 0));
-END;
+END ENTITY;
 
 ARCHITECTURE behave OF data_memory IS
 
